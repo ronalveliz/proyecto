@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <h1>lista de restaurantes</h1>
+        <div class="col"> 
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Web</th>
+                    <th scope="col">Price Level</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    @for (restaurant of restaurants; track restaurant) {
+                        <tr>
+                            <td>{{ restaurant.id }}</td>
+                            <td>{{ restaurant.title }}</td>
+                            <td>{{ restaurant.address }}</td>
+                            <td>{{ restaurant.phone }}</td>
+                            <td>{{ restaurant.email }}</td>
+                            <td><a [href]="restaurant.webUrl" target="_blank">{{ restaurant.webUrl }}</a></td>
+                            <td>{{ restaurant.priceLevel }}</td>
+                            <td>
+                            <!--<a [routerLink]="['/restaurants', restaurant.id]">Detail</a>
+                            <a [routerLink]="['/restaurants', restaurant.id, 'edit']">Edit</a>-->
+                            </td>
+                        </tr>
+                    }
+                </tbody>                       
+            </table>
+        </div>
+
+    </div>
+</div>
